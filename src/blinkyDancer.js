@@ -14,8 +14,8 @@ var MakeBlinkyDancer = function(top, left, timeBetweenSteps){
 };
 
 MakeBlinkyDancer.prototype = Object.create(MakeDancer.prototype);
-//MakeBlinkyDancer.prototype.constructor = MakeBlinkyDancer;
-MakeBlinkyDancer.prototype.constructor = MakeDancer;
+MakeBlinkyDancer.prototype.constructor = MakeBlinkyDancer;
+//MakeBlinkyDancer.prototype.constructor = MakeDancer;
 
 MakeBlinkyDancer.prototype.step = function(){
   console.log('blinkyDancer step is running');
