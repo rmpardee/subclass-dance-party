@@ -27,11 +27,45 @@ body, a:link, a:visited, a:active{
 }
 .spinny{
   border:10px solid blue;
-  border-radius:10px;
+  width: 50px;
+  height: 100px;
   position:absolute;
+  -webkit-animation-name: spinnerRotate;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
 }
+
+@-webkit-keyframes spinnerRotate
+{
+    from{-webkit-transform:rotate(0deg);}
+    to{-webkit-transform:rotate(360deg);}
+}
+
+
 .growing{
   border:10px solid green;
-  border-radius:10px;
+  width: 10px;
+  height: 10px;
+  /*border-radius:10px;*/
   position:absolute;
+  -webkit-animation-name: grow;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+}
+
+@-webkit-keyframes grow {
+  0% {
+    transform: scale(.3);
+    background-color: red;
+    border-radius: 100%;
+  }
+  50% {
+    background-color: orange;
+  }
+  100% {
+    transform: scale(1.5);
+    background-color: yellow;
+  }
 }

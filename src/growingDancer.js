@@ -12,10 +12,11 @@ GrowingDancer.prototype.step = function(timeBetweenSteps){
   //this.oldStep(); // NOTE, leaving this in, caused problems so we commented it out.
   (Dancer.prototype.step).call(this, timeBetweenSteps);
 
+  // this.$node.addClass('growingBig');
 
   // toggle() is a jQuery method to show/hide the <span> tag.
   // See http://api.jquery.com/category/effects/ for this and
   // other effects you can use on a jQuery-wrapped html tag.
-  this.$node.toggle();
+  // this.$node.toggle();
   //console.log('after toggle');
 };
