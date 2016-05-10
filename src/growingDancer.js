@@ -1,13 +1,13 @@
 
-var BlinkyDancer = function(top, left, timeBetweenSteps, type){
+var GrowingDancer = function(top, left, timeBetweenSteps, type){
 
   Dancer.call(this, top, left, timeBetweenSteps, type);
 };
 
-BlinkyDancer.prototype = Object.create(Dancer.prototype);
-BlinkyDancer.prototype.constructor = BlinkyDancer;
+GrowingDancer.prototype = Object.create(Dancer.prototype);
+GrowingDancer.prototype.constructor = GrowingDancer;
 
-BlinkyDancer.prototype.step = function(timeBetweenSteps){
+GrowingDancer.prototype.step = function(timeBetweenSteps){
   // call the old version of step at the beginning of any call to this new version of step
   //this.oldStep(); // NOTE, leaving this in, caused problems so we commented it out.
   (Dancer.prototype.step).call(this, timeBetweenSteps);
