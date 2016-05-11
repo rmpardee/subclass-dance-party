@@ -19,6 +19,7 @@ $(document).ready(function(){
 
     var type = $(this).attr("id");
     // get the maker function for the kind of dancer we're supposed to make
+    //console.log(window[dancerMakerFunctionName]);
     var dancerMakerFunction = window[dancerMakerFunctionName];
     //console.log(window[dancerMakerFunctionName]);
 
@@ -30,7 +31,31 @@ $(document).ready(function(){
       Math.random() * 1000,
       type
     );
+
+    // Stores this dancer in our window.dancers array
+    window.dancers.push(dancer);
+
     $('body').append(dancer.$node);
+    
+    console.dir(window.dancers[0]);
   });
+
+  $('#linesUpDancers').on("click", function(event){
+    // loop through the dancers
+    for(var i = 0; i < window.dancers.length; i++) {
+      // run the lineUp method on each
+      window.dancers[i].lineUp();
+    }
+  });
+
+  $('#getsDancersBack').on("click", function(event){
+    
+    for(var i = 0; i < window.dancers.length; i++) {
+
+      window.dancers[i].getBack();
+    }
+  });
+
+
 });
 

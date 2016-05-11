@@ -3,7 +3,9 @@ body, html{
 }
 body{
   margin: 0px;
-  background-color:#444;
+  /*background-color:#444;*/
+  background-image: url('http://i.giphy.com/KPgOYtIRnFOOk.gif');
+  -webkit-background-size: cover; 
   font-size: 18px;
 }
 body, a:link, a:visited, a:active{
