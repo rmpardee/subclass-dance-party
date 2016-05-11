@@ -29,7 +29,12 @@ Dancer.prototype.step = function(){
     instanceThis.step.call(instanceThis);
   }, instanceThis._timeBetweenSteps);
 
-  // PASSING: version where we pass the parameter directly to step within the anonymous function
+  // FAILING: version using call where we pass in this, not instanceThis
+  // setTimeout(function(){
+  //   this.step.call(this, timeBetweenSteps);
+  // }, timeBetweenSteps);
+
+  // PASSING: version where we pass the parameter directly to step within the anonymous function (can use this or instanceThis)
   // setTimeout(function(){
   //   this.step(timeBetweenSteps)
   // }.bind(this), timeBetweenSteps);
@@ -39,9 +44,13 @@ Dancer.prototype.step = function(){
   //   this.step(param);
   // }.bind(this, timeBetweenSteps), timeBetweenSteps);
 
-  // FAILING: version where bind acts directly on the step method
-   // setTimeout(
-    // this.step(timeBetweenSteps).bind(this), timeBetweenSteps);
+  // FAILING: version where bind acts directly on the step method with this
+  // setTimeout(
+  // this.step(timeBetweenSteps).bind(this), timeBetweenSteps);
+
+  // FAILING: version where bind acts directly on the step method with instanceThis
+  // setTimeout(
+  //  instanceThis.step.bind(instanceThis, timeBetweenSteps), timeBetweenSteps);
 };
 
 Dancer.prototype.setPosition = function(top, left){
